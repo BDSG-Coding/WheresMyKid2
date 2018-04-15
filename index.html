@@ -6,10 +6,10 @@
     <!-- Added link to the jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
-    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+    
+    
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
     <!-- LINK TO FIREBASE GOES HERE -->
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
@@ -18,14 +18,16 @@
 </head>
 
 <body>
-    
-        <div class="jumbotron">
-            <h1 class="text-center">Where's My Kid</h1>
-            <h3 class="text-center">Keeping track on all my kids activities</h3>
+    <div class="box" style="background-color:rgb(107, 182, 243)">    
+        <div class="panel panel-primary" style="background-color:yellow">
+            <h1 class="title is-1 has-text-link has-text-centered">Where's my kid?</h1>
+            <h3 class="subtitle is-5 has-text-link has-text-centered">A Comprehensive list of my child's daily activities</h3>
         </div>
+        
+        
     
         <div class = "container">
-            <table class="table table-striped">
+            <table class="table table-is-bordered table is-fullwidth">
                 <tr>
                     <th>Activity</th>
                     <th>Location</th>
@@ -38,8 +40,12 @@
             </table>
     
         </div>
-
-
+            <br>
+        <div>
+        <input class="button is-warning" type="text" id="addActivity" value="Add Activity">
+    </form>
+    </div>
+</div>
     <!-- Script -->
     <script type="text/javascript" src="assets/javascript/backend2.js"></script> 
 </body>
