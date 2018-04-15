@@ -71,22 +71,10 @@ database.ref().orderByChild("dateTime").on("child_added", function (snapshot) {
   
   console.log(activity);
 
-<<<<<<< HEAD
   $("#activity").text("Activity: " + activity);
   $("#date").text("Date: " + dateTime);
   $("#address").text("Location: " + streetAddress + " " + city + "," + state);
   $("#notes").text("Notes: " + notes);
-=======
-  var listActivity = $("<li>");
-
-  listActivity.append("<ul>" + activity + "</ul>");
-  listActivity.append("<ul>" + city + "</ul>");
-  listActivity.append("<ul>" + state + "</ul>");
-  listActivity.append("<ul>" + dateTime + "</ul>");
-  listActivity.append("<ul>" + notes + "</ul>");
-
-$("ul").append(listActivity);
->>>>>>> f70302fea46f23e88c96280d10eb9baf2f45154d
 
 
   var streetAddress1 = streetAddress.split(' ').join('+');
