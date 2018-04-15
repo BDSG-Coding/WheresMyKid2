@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Where's my kid</title>
+
+  <!-- Bulma -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- LINK TO FIREBASE GOES HERE -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <div class="box" style="background-color:rgb(107, 182, 243)">
+
+    <div class="panel panel-primary" style="background-color:yellow">
+      <h1 class="title is-1 has-text-link has-text-centered">Where's my kid?</h1>
+      <h3 class="subtitle is-5 has-text-link has-text-centered">A Comprehensive list of my child's daily activities</h3>
+    </div>
+    <div>
+      <div class="panel panel-primary"></div>
+      <div class="panel panel-heading">
+        <h3 class="panel-title">Add Event:</h3>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Activity</label>
+      <div class="control">
+        <input class="input" type="text" id="activityInput" placeholder="Activity">
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label class="label">Address</label>
+            <div class="control">
+              <input class="input" type="text" id="addressInput" placeholder="Adress">
+            </div>
+        </div>
+      </div>
+      <div class="column">
+          <div class="field">
+            <label class="label">City</label>
+              <div class="control">
+                <input class="input" type="text" id="cityInput" placeholder="City">
+              </div>
+          </div>
+        </div>
+        <div class="column">
+            <div class="field">
+              <label class="label">State</label>
+                <div class="control">
+                  <input class="input" type="text" id="stateInput" placeholder="State">
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="field">
+      <label class="label">Time </label>
+      <div class="control">
+        <input class="input" type="datetime-local" id="datetime-input" placeholder="Date and time">
+      </div>
+    </div>
+
+
+    <div class="field">
+      <label class="label">Notes</label>
+      <div class="control">
+        <input class="input" type="text" id="notes-input" placeholder="Items needed">
+      </div>
+    </div>
+
+    <br>
+    <input class="button is-warning" type="submit" id="add-activity" value="Submit">
+    </form>
+    
+  </div>
+
+  
+  <!-- Script -->
+  <script type="text/javascript" src="assets/javascript/backend.js"></script> 
+
+</body>
+
+</html>
