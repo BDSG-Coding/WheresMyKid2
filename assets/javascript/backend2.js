@@ -129,14 +129,14 @@ function weatherAPI(city) {
   })
 
     .then(function (response1) {
-      //console.log(response1);
+      console.log(response1);
 
       var weathermap = $("#weather-map");
 
       weathermap.append("<p>" + "Temperature (F): " + response1.main.temp + "</p>");
 
-
-
+weathermap.append("<p>"+"Condition: "+(response1.weather["0"].description));
+weathermap.append("<p>"+"Wind Speed (mph): "+response1.wind.speed+"</p>");
     });
 
 }
