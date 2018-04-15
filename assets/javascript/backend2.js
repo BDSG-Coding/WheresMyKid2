@@ -113,7 +113,7 @@ $.ajax({
 
   //console.log("------" + response.results["0"].geometry.location.lat + "------");
 });
-}
+};
 
 
 function weatherAPI(city) {
@@ -158,7 +158,7 @@ database.ref(key).on("value", function(snapshot) {
 }, function (error) {
    console.log("Error: " + error.code);
 });
-}
+};
 
 function removeActivityFirebase (key){
   database.ref(key).remove();
