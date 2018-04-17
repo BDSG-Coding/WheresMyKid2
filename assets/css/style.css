@@ -2,6 +2,7 @@ h1{
     text-align: center;
     font-family: cursive;
     color: white;
+    font-size: 250%;
    
 }
 #header {
@@ -24,4 +25,9 @@ h1{
 .footer {
     background-color: black;
     color:black;
+}
+.navbar {
+    padding: 20px;
+    margin-left: 45px;
+    margin-right: 45px;
 }
