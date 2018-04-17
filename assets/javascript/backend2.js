@@ -126,16 +126,35 @@ function weatherAPI(city) {
   $.ajax({
     url: queryURL1,
     method: "GET"
-  })
-
-    .then(function (response1) {
-      //console.log(response1);
+  }).then(function (response1) {
+      console.log(response1);
 
       var weathermap = $("#weather-map");
 
       weathermap.append("<p>" + "Temperature (F): " + response1.main.temp + "</p>");
 
+weathermap.append("<p>"+"Condition: "+(response1.weather["0"].description));
+weathermap.append("<p>"+"Wind Speed (mph): "+response1.wind.speed+"</p>");
+var image = $("<img>");
+image.attr("style", "margin-left: 20px; margin-top: 20px; height: 180px; width: 180px");
+console.log(response1.weather["0"].main);
+if (response1.weather["0"].main === "Rain") {
+  image.attr("src", "assets/images/rain.jpg")
+} 
+else if (
+  response1.weather["0"].main === "Clear") {
+image.attr("src", "assets/images/clear.jpg")
+  }
+else if (response1.weather["0"].main === "Clouds") {
+  image.attr("src", "assets/images/clouds.jpg" )
+}
 
+else {
+  image.attr("src", "#");
+}
+
+
+weathermap.append(image);
 
     });
 
@@ -172,7 +191,7 @@ $(document).on("click", "#info", function(event) {
   event.preventDefault();
   key = $(this).attr("key");
   console.log("Key: " + key);
-  window.open("activity.html?key=" + key + "");
+  window.open("activity.html?key=" + key + "", "_blank");
 });
 
 $(document).on("click", "#remove", function(event) {
