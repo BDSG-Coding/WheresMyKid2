@@ -137,14 +137,15 @@ weathermap.append("<p>"+"Condition: "+(response1.weather["0"].description));
 weathermap.append("<p>"+"Wind Speed (mph): "+response1.wind.speed+"</p>");
 var image = $("<img>");
 image.attr("style", "margin-left: 20px; margin-top: 20px; height: 180px; width: 180px");
-if (response1.weather["0"] == "Rain") {
+console.log(response1.weather["0"].main);
+if (response1.weather["0"].main === "Rain") {
   image.attr("src", "assets/images/rain.jpg")
 } 
 else if (
-  response1.weather["0"] == "Clear") {
+  response1.weather["0"].main === "Clear") {
 image.attr("src", "assets/images/clear.jpg")
   }
-else if (response1.weather["0"] == "Clouds") {
+else if (response1.weather["0"].main === "Clouds") {
   image.attr("src", "assets/images/clouds.jpg" )
 }
 
