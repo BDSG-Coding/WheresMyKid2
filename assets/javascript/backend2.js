@@ -126,9 +126,7 @@ function weatherAPI(city) {
   $.ajax({
     url: queryURL1,
     method: "GET"
-  })
-
-    .then(function (response1) {
+  }).then(function (response1) {
       console.log(response1);
 
       var weathermap = $("#weather-map");
@@ -137,6 +135,26 @@ function weatherAPI(city) {
 
 weathermap.append("<p>"+"Condition: "+(response1.weather["0"].description));
 weathermap.append("<p>"+"Wind Speed (mph): "+response1.wind.speed+"</p>");
+var image = $("<img>");
+image.attr("style", "margin-left: 20px; margin-top: 20px; height: 180px; width: 180px");
+if (response1.weather["0"] == "Rain") {
+  image.attr("src", "assets/images/rain.jpg")
+} 
+else if (
+  response1.weather["0"] == "Clear") {
+image.attr("src", "assets/images/clear.jpg")
+  }
+else if (response1.weather["0"] == "Clouds") {
+  image.attr("src", "assets/images/clouds.jpg" )
+}
+
+else {
+  image.attr("src", "#");
+}
+
+
+weathermap.append(image);
+
     });
 
 }
