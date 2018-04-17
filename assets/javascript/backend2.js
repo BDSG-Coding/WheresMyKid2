@@ -191,7 +191,7 @@ $(document).on("click", "#info", function(event) {
   event.preventDefault();
   key = $(this).attr("key");
   console.log("Key: " + key);
-  window.open("activity.html?key=" + key + "");
+  window.open("activity.html?key=" + key + "", "_blank");
 });
 
 $(document).on("click", "#remove", function(event) {
