@@ -136,7 +136,7 @@ function weatherAPI(city) {
 weathermap.append("<p>"+"Condition: "+(response1.weather["0"].description));
 weathermap.append("<p>"+"Wind Speed (mph): "+response1.wind.speed+"</p>");
 var image = $("<img>");
-image.attr("style", "margin-left: 20px; margin-top: 20px; height: 180px; width: 180px");
+image.attr("style", "margin-left: 0px; margin-top: 20px; height: 180px; width: 180px");
 console.log(response1.weather["0"].main);
 if (response1.weather["0"].main === "Rain") {
   image.attr("src", "assets/images/rain.jpg")
