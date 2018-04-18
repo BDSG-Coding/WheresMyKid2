@@ -168,9 +168,15 @@ function readFirebase (key) {
 
 database.ref(key).on("value", function(snapshot) {
    console.log(snapshot.val());
+   notes = snapshot.val().notes;
+   activity = snapshot.val().activity;
    streetAddress = snapshot.val().streetAddress;
    city = snapshot.val().city;
    state = snapshot.val().state;
+   $("#activity").append("<p>"+activity+"</p>");
+   $("#activity").append("<p>"+streetAddress+"</p>");
+   $("#activity").append("<p>"+city+", "+state+"</p>");
+   $("#activity").append("<p>Notes: "+notes+"</p>");
    googleMapsAPI(streetAddress, city, state);
    weatherAPI(city);
 
