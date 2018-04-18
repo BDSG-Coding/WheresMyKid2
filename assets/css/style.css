@@ -5,29 +5,11 @@ h1{
     font-size: 250%;
    
 }
-#header {
-    background-color: black;
-}
-.notification {
-    background-color: black;
-    
-}
-#weather-map{
-    background-color: blue;
-    color: aliceblue;
-    font-size: 20px;
-}
-#map {
-    background-color: blue;
-    color: aliceblue;
-    font-size: 20px;
-}
-.footer {
-    background-color: black;
-    color:black;
-}
 .navbar {
     padding: 20px;
     margin-left: 45px;
     margin-right: 45px;
+}
+.tile1{
+    padding: 20px;
 }
