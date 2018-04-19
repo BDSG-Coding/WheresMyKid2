@@ -1,6 +1,4 @@
 var key = window.location.href.split('=').pop();
-
-console.log("I'm in activities and here is my key: " + key);
-
+//Use the key to read the firebase database and pass it to readFirebase function
 readFirebase(key);
 
