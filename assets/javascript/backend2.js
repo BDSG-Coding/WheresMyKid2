@@ -15,6 +15,7 @@ var database = firebase.database();
 
 //Variables
 var activity = "";
+var myLocation = "";
 var streetAddress = "";
 var city = "";
 var state = "";
@@ -28,6 +29,7 @@ $("#add-activity").on("click", function (event) {
 
   //Read in values from the form
   activity = $("#activityInput").val().trim();
+  myLocation = $("#locationInput").val().trim();
   streetAddress = $("#addressInput").val().trim();
   city = $("#cityInput").val().trim();
   state = $("#stateInput").val().trim();
@@ -37,6 +39,7 @@ $("#add-activity").on("click", function (event) {
   // Code for handling the push to firebase database
   database.ref().push({
     activity: activity,
+    myLocation:myLocation,
     streetAddress: streetAddress,
     city: city,
     state: state,
@@ -47,6 +50,7 @@ $("#add-activity").on("click", function (event) {
 
   //Clear the form after we get the data
   $("#activityInput").val("");
+  $("#locationInput").val("");
   $("#addressInput").val("");
   $("#cityInput").val("");
   $("#datetime-input").val("");
@@ -59,6 +63,7 @@ database.ref().orderByChild("dateTime").on("child_added", function (snapshot) {
   //Database information
   key = snapshot.key
   activity = snapshot.val().activity;
+  myLocation = snapshot.val().myLocation;
   streetAddress = snapshot.val().streetAddress;
   city = snapshot.val().city;
   state = snapshot.val().state;
@@ -69,7 +74,8 @@ database.ref().orderByChild("dateTime").on("child_added", function (snapshot) {
   //Populate our table with the database information
   var tableRow = $("<tr>");
         tableRow.append("<td>" + activity + "</td>");
-        tableRow.append("<td>" + streetAddress + ", " + city + "</td>");
+        tableRow.append("<td>" + myLocation + "</td>");
+        //tableRow.append("<td>" + streetAddress + ", " + city + "</td>");
         tableRow.append("<td>" + date + "</td>");
         tableRow.append("<td>" + time + "</td>");
         tableRow.append("<td><button id='info' class='btn btn-default' key='" + key + "'>More Info</button></td>");
@@ -154,6 +160,7 @@ function readFirebase (key) {
   database.ref(key).on("value", function(snapshot) {
     notes = snapshot.val().notes;
     activity = snapshot.val().activity;
+    myLocation = snapshot.val().myLocation;
     streetAddress = snapshot.val().streetAddress;
     city = snapshot.val().city;
     state = snapshot.val().state;
@@ -161,6 +168,7 @@ function readFirebase (key) {
     var date = moment(dateTime).format("dddd, MMMM Do YYYY");
     var time = moment(dateTime).format("LT");
     $("#activity").append("<p>"+activity+"</p>");
+    $("#activity").append("<p>"+myLocation+"</p>");
     $("#activity").append("<p>"+date+"</p>");
     $("#activity").append("<p>"+time+"</p>");
     $("#activity").append("<p>"+streetAddress+"</p>");
