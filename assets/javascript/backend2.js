@@ -161,7 +161,8 @@ function readFirebase (key) {
     var date = moment(dateTime).format("dddd, MMMM Do YYYY");
     var time = moment(dateTime).format("LT");
     $("#activity").append("<p>"+activity+"</p>");
-    $("#activity").append("<p>"+date+", "+time+"</p>");
+    $("#activity").append("<p>"+date+"</p>");
+    $("#activity").append("<p>"+time+"</p>");
     $("#activity").append("<p>"+streetAddress+"</p>");
     $("#activity").append("<p>"+city+", "+state+"</p>");
     $("#activity").append("<p>Notes: "+notes+"</p>");
